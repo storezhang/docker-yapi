@@ -1,4 +1,4 @@
-FROM node:9.2-alpine as builder
+FROM node:alpine as builder
 
 ENV VERSION=1.4.3
 
@@ -10,7 +10,7 @@ RUN wget -O yapi.tgz http://registry.npm.taobao.org/yapi-vendor/download/yapi-ve
 
 
 
-FROM node:9.2-alpine
+FROM node:alpine
 
 MAINTAINER storezhang@gmail.com
 
