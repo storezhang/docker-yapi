@@ -8,11 +8,13 @@ steps:
     settings:
       repo: storezhang/yapi
       dockerfile: ./Dockerfile
+      build_args:
+        - HTTP_PROXY=https://gopath.org
       username:
         from_secret: docker_username
       password:
         from_secret: docker_password
       force_tag: true
       tags:
-        - latest
-        - 1.4.3
+        - 'latest'
+        - '1.4.3'
