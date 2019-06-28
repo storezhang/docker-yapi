@@ -9,7 +9,7 @@ steps:
       repo: storezhang/yapi
       dockerfile: ./Dockerfile
       build_args:
-        - HTTP_PROXY=https://goproxy.io
+        - HTTP_PROXY=http://taoismzhang:4BEmaznukzFFq@nas.storezhang.imyserver.com:23589
       username:
         from_secret: docker_username
       password:
