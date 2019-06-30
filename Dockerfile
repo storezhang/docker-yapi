@@ -20,6 +20,6 @@ ENV TZ="Asia/Chongqing" HOME="/"
 WORKDIR ${HOME}
 COPY --from=builder /api/vendors /api/vendors
 COPY config.json /api/
-EXPOSE 3000
+EXPOSE 23100
 
 ENTRYPOINT ["node"]

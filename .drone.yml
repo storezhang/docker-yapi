@@ -17,4 +17,4 @@ steps:
       force_tag: true
       tags:
         - 'latest'
-        - '1.7.0'
+        - '1.7.0.1'
