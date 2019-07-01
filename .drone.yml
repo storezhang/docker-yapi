@@ -8,6 +8,8 @@ steps:
     settings:
       repo: storezhang/yapi
       dockerfile: ./Dockerfile
+      build_args:
+        - from_secret: http_proxy
       mirror:
         from_secret: docker_mirror
       username:
@@ -17,4 +19,4 @@ steps:
       force_tag: true
       tags:
         - 'latest'
-        - '1.7.0.2'
+        - '1.7.0.3'
