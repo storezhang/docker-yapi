@@ -10,6 +10,7 @@ RUN set -x \
     && apk add --no-cache git python make openssl tar gcc \
     && wget -O yapi.tgz http://registry.npm.taobao.org/yapi-vendor/download/yapi-vendor-$YAPI_VERSION.tgz \
     && tar zxvf yapi.tgz -C /home/ \
+    && mkdir /api \
     && mv /home/package /api/vendors \
     && cd /api/vendors \
     && npm install --production --registry https://registry.npm.taobao.org
