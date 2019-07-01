@@ -5,13 +5,11 @@ steps:
   - name: docker
     image: plugins/docker
     pull: true
-    environment:
-      MIRROR:
-        from_secret: docker_mirror
     settings:
       repo: storezhang/yapi
       dockerfile: ./Dockerfile
-      mirror: $MIRROR
+      mirror:
+        from_secret: docker_mirror
       username:
         from_secret: docker_username
       password:
