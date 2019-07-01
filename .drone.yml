@@ -8,6 +8,8 @@ steps:
     settings:
       repo: storezhang/yapi
       dockerfile: ./Dockerfile
+      build_args:
+        - '--registry-mirror=https://4lch7u25.mirror.aliyuncs.com'
       username:
         from_secret: docker_username
       password:
