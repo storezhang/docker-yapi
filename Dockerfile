@@ -1,4 +1,4 @@
-FROM node:9.2-alpine as builder
+FROM node:alpine as builder
 
 ENV YAPI_VERSION=1.7.0
 
@@ -17,7 +17,7 @@ RUN set -x \
 
 
 
-FROM node:9.2-alpine
+FROM node:alpine
 
 LABEL maintainer="Storezhang<storezhang@gmail.com>"
 
