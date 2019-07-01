@@ -20,7 +20,6 @@ RUN set -x \
     && wget -O yapi.tgz http://registry.npm.taobao.org/yapi-vendor/download/yapi-vendor-$YAPI_VERSION.tgz \
     && tar zxvf yapi.tgz -C /home/ \
     && rm -rf yapi.tgz \
-    && mkdir ${YAPI_HOME} \
     && mv /home/package ${YAPI_HOME}/vendors \
     && cd ${YAPI_HOME}/vendors \
     && npm install --production --registry https://registry.npm.taobao.org
