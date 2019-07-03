@@ -4,7 +4,11 @@ name: yapi
 steps:
   - name: docker
     image: plugins/docker
-    pull: true
+    pull: always
+    when:
+      event:
+        - pull_request
+        - tag
     settings:
       repo: storezhang/yapi
       dockerfile: ./Dockerfile
@@ -14,7 +18,5 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
+      auto_tag: true
       force_tag: true
-      tags:
-        - 'latest'
-        - '1.7.1'
