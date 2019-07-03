@@ -8,8 +8,6 @@ steps:
     settings:
       repo: storezhang/yapi
       dockerfile: ./Dockerfile
-      build_args:
-        - from_secret: http_proxy
       mirror:
         from_secret: docker_mirror
       username:
