@@ -1,14 +1,18 @@
 kind: pipeline
 name: yapi
 
+clone:
+  disable: true
+
 steps:
+  - name: clone
+    image: plugins/git
+    recursive: true
+
+
   - name: docker
     image: plugins/docker
     pull: always
-    when:
-      event:
-        - pull_request
-        - tag
     settings:
       repo: storezhang/yapi
       dockerfile: ./Dockerfile
