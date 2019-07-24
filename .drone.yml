@@ -17,6 +17,7 @@ steps:
       repo: storezhang/yapi
       dockerfile: ./Dockerfile
       mirror: https://docker.mirrors.ustc.edu.cn
+      storage_driver: vfs
       username: storezhang
       password:
         from_secret: docker_password
