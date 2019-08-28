@@ -23,10 +23,23 @@ FROM node:alpine
 LABEL maintainer="Storezhang<storezhang@gmail.com>"
 
 ENV TZ="Asia/Shanghai" HOME="/"
+ENV LANG="zh_CN.UTF-8"
+ENV TIMEZONE=/Asia/Chongqing
+
 WORKDIR ${HOME}
 
 COPY --from=builder /api/vendors /api/vendors
 COPY config.json /api/
+
+RUN set -x \
+    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/main'>/etc/apk/repositories \
+    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/community'>>/etc/apk/repositories \
+    && apk update \
+    && apk --no-cache add tzdata \
+    && cp "/usr/share/zoneinfo/${TIMEZONE}" /etc/localtime \
+    && echo "${TIMEZONE}" > /etc/timezone \
+    && echo "export LC_ALL=${LANG}" >> /etc/profile \
+    && rm -rf /var/cache/apk/*
 
 EXPOSE 23100
 
