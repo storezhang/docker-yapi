@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 
-ENV YAPI_VERSION=1.8.3
+ENV YAPI_VERSION=1.8.5
 
 RUN set -x \
     && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/main'>/etc/apk/repositories \
