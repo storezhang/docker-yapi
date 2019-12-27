@@ -12,7 +12,10 @@ steps:
 
   - name: docker
     image: plugins/docker
-    pull: always
+    when:
+      event:
+        - tag
+        - pull_request
     settings:
       repo: storezhang/yapi
       dockerfile: ./Dockerfile
