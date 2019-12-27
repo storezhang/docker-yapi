@@ -7,6 +7,10 @@ clone:
 steps:
   - name: clone
     image: plugins/git
+    when:
+      event:
+        - tag
+        - pull_request
     recursive: true
 
 
