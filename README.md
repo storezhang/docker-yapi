@@ -12,7 +12,7 @@ sudo docker run -it --rm \
   --entrypoint npm \
   --workdir /api/vendors \
   --volume /volume1/docker/yapi/config.json:/api/config.json \
-  storezhang/yapi:1.7.0.3 \
+  storezhang/yapi \
   run install-server
 ```
 ---------------------
@@ -24,6 +24,6 @@ sudo docker run -d \
   --workdir /api/vendors \
   --volume /volume1/docker/yapi/config.json:/api/config.json:ro \
   -p 23100:23100 \
-  storezhang/yapi:1.7.0.3 \
+  storezhang/yapi \
   server/app.js
 ```
