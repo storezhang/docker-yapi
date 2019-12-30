@@ -3,8 +3,6 @@ FROM node:alpine as builder
 ENV YAPI_VERSION=1.8.5
 
 RUN set -x \
-    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/main'>/etc/apk/repositories \
-    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/community'>>/etc/apk/repositories \
     && apk update \
     && apk upgrade \
     && apk add --no-cache git python make openssl tar gcc \
@@ -34,8 +32,6 @@ COPY --from=builder /api/vendors /api/vendors
 COPY config.json /api/
 
 RUN set -x \
-    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/main'>/etc/apk/repositories \
-    && echo 'https://mirrors.ustc.edu.cn/alpine/v3.9/community'>>/etc/apk/repositories \
     && apk update \
     && apk --no-cache add tzdata \
     && cp "/usr/share/zoneinfo/${TIMEZONE}" /etc/localtime \
