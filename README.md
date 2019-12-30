@@ -1,5 +1,5 @@
 # yapi
-[![Build Status](https://drone.storezhang.imyserver.com:20443/api/badges/storezhang/docker-yapi/status.svg)](https://drone.storezhang.imyserver.com:20443/storezhang/docker-yapi)
+[![Build Status](https://cloud.drone.io/api/badges/storezhang/docker-yapi/status.svg)](https://cloud.drone.io/storezhang/docker-yapi)
 
 YAPI服务，使用Docker运行，一套解决方案
 
