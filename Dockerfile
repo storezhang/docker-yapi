@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 
-ENV YAPI_VERSION=1.8.5
+ENV YAPI_VERSION=1.8.7
 
 RUN set -x \
     && apk update \
