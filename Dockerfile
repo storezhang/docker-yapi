@@ -5,7 +5,7 @@ ENV YAPI_VERSION=1.9.2
 RUN set -x
 RUN apk update
 RUN apk upgrade
-RUN apk add --no-cache git python3 make openssl tar gcc
+RUN apk add --no-cache git python2 make openssl tar gcc
 RUN wget -O yapi.tgz http://registry.npm.taobao.org/yapi-vendor/download/yapi-vendor-$YAPI_VERSION.tgz
 RUN tar zxf yapi.tgz -C /home/
 RUN mkdir /api
