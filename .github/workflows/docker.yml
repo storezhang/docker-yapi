@@ -16,8 +16,8 @@ jobs:
       - name: 登录Docker中央仓库
         uses: docker/login-action@v1
         with:
-          username: ${{ docker.USERNAME }}
-          password: ${{ docker.PASSWORD }}
+          username: ${{ env.docker.USERNAME }}
+          password: ${{ env.docker.PASSWORD }}
 
       - name: 编译并提交到Docker中央仓库
         id: docker_build
