@@ -20,7 +20,7 @@ FROM node:alpine
 
 LABEL maintainer="Storezhang<storezhang@gmail.com>"
 LABEL architecture="AMD64/x86_64" version="latest" build="2021-06-25"
-LABEL Description="基于Alpine的最新YAPI打包"
+LABEL Description="基于Alpine的最新Yapi打包"
 
 ENV TZ="Asia/Shanghai" HOME="/"
 ENV LANG="zh_CN.UTF-8"
