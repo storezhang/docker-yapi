@@ -2,16 +2,16 @@ FROM node:alpine as builder
 
 ENV YAPI_VERSION=1.9.2
 
-RUN set -x \
-    && apk update \
-    && apk upgrade \
-    && apk add --no-cache git python make openssl tar gcc \
-    && wget -O yapi.tgz http://registry.npm.taobao.org/yapi-vendor/download/yapi-vendor-$YAPI_VERSION.tgz \
-    && tar zxf yapi.tgz -C /home/ \
-    && mkdir /api \
-    && mv /home/package /api/vendors \
-    && cd /api/vendors \
-    && npm install --production --registry https://registry.npm.taobao.org
+RUN set -x
+RUN apk update
+RUN apk upgrade
+RUN apk add --no-cache git python make openssl tar gcc
+RUN wget -O yapi.tgz http://registry.npm.taobao.org/yapi-vendor/download/yapi-vendor-$YAPI_VERSION.tgz
+RUN tar zxf yapi.tgz -C /home/
+RUN mkdir /api
+RUN mv /home/package /api/vendors
+RUN cd /api/vendors
+RUN npm install --production --registry https://registry.npm.taobao.org
 
 
 
